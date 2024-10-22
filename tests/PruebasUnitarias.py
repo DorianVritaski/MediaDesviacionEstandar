@@ -37,5 +37,12 @@ class Pruebas(unittest.TestCase):
         resultadoActual = operacion.calcularMedia()
         self.assertEqual(resultadoEsperado, resultadoActual)
 
+    def test_media_elementosPositivosYNegativos(self):
+        elementos = [-1, 2, -3, 4]
+        resultadoEsperado = 0.5
+        operacion = Operaciones(elementos)
+        resultadoActual = operacion.calcularMedia()
+        self.assertEqual(resultadoEsperado, resultadoActual)
+
 if __name__ == '__main__':
     unittest.main()
