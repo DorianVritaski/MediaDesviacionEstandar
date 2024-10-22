@@ -9,6 +9,12 @@ class Pruebas(unittest.TestCase):
         with self.assertRaises(NoSePuedeCalcular):
             operacion.calcularMedia()
 
+    def test_media_unElemento_retornaElemento(self):
+        elementos = [3.5]
+        resultadoEsperado = 3.5
+        operacion = Operaciones(elementos)
+        resultadoActual = operacion.calcularMedia()
+        self.assertEqual(resultadoEsperado, resultadoActual)
 
 
 if __name__ == '__main__':
