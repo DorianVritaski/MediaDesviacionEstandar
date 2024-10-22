@@ -50,5 +50,12 @@ class Pruebas(unittest.TestCase):
         with self.assertRaises(TypeError):
             operacion.calcularMedia()
 
+    # Pruebas para calcular la desviación estándar
+    def test_desviacion_listaVacia_lanzaExcepcion(self):
+        elementos = []
+        operacion = Operaciones(elementos)
+        with self.assertRaises(NoSePuedeCalcular):
+            operacion.calcularDesviacionEstandar()
+
 if __name__ == '__main__':
     unittest.main()
