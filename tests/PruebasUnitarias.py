@@ -16,6 +16,13 @@ class Pruebas(unittest.TestCase):
         resultadoActual = operacion.calcularMedia()
         self.assertEqual(resultadoEsperado, resultadoActual)
 
+    def test_media_dosElementos(self):
+        elementos = [3, 7]
+        resultadoEsperado = 5
+        operacion = Operaciones(elementos)
+        resultadoActual = operacion.calcularMedia()
+        self.assertEqual(resultadoEsperado, resultadoActual)
+
 
 if __name__ == '__main__':
     unittest.main()
