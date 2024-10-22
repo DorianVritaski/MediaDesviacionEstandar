@@ -64,5 +64,12 @@ class Pruebas(unittest.TestCase):
         resultadoActual = operacion.calcularDesviacionEstandar()
         self.assertEqual(resultadoEsperado, resultadoActual)
 
+    def test_desviacion_dosElementos(self):
+        elementos = [2, 4]
+        resultadoEsperado = 1
+        operacion = Operaciones(elementos)
+        resultadoActual = operacion.calcularDesviacionEstandar()
+        self.assertEqual(resultadoEsperado, resultadoActual)
+
 if __name__ == '__main__':
     unittest.main()
