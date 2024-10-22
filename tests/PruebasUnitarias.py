@@ -78,5 +78,13 @@ class Pruebas(unittest.TestCase):
         resultadoActual = operacion.calcularDesviacionEstandar()
         self.assertAlmostEqual(resultadoEsperado, resultadoActual, places=2)
 
+    def test_desviacion_todosCeros(self):
+        elementos = [0, 0, 0, 0, 0]
+        resultadoEsperado = 0
+        operacion = Operaciones(elementos)
+        resultadoActual = operacion.calcularDesviacionEstandar()
+        self.assertEqual(resultadoEsperado, resultadoActual)
+
+
 if __name__ == '__main__':
     unittest.main()
