@@ -92,5 +92,11 @@ class Pruebas(unittest.TestCase):
         resultadoActual = operacion.calcularDesviacionEstandar()
         self.assertAlmostEqual(resultadoEsperado, resultadoActual, places=2)
 
+    def test_desviacion_elementosNoNumericos_lanzaExcepcion(self):
+        elementos = [1, 'a', 3]
+        operacion = Operaciones(elementos)
+        with self.assertRaises(TypeError):
+            operacion.calcularDesviacionEstandar()
+
 if __name__ == '__main__':
     unittest.main()
