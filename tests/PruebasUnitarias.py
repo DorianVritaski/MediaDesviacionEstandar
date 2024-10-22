@@ -44,5 +44,11 @@ class Pruebas(unittest.TestCase):
         resultadoActual = operacion.calcularMedia()
         self.assertEqual(resultadoEsperado, resultadoActual)
 
+    def test_media_elementosNoNumericos_lanzaExcepcion(self):
+        elementos = [1, 'a', 3]
+        operacion = Operaciones(elementos)
+        with self.assertRaises(TypeError):
+            operacion.calcularMedia()
+
 if __name__ == '__main__':
     unittest.main()
